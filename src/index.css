@@ -1,0 +1,74 @@
+
+/* optional: dark page like your screenshot */
+body { background:#0f1115; margin:0; font-family: system-ui, Arial, sans-serif; }
+
+/* stack cards in one centered column */
+.card-container{
+    display:flex;
+    flex-direction:column;       /* vertical */
+    align-items:center;          /* center horizontally */
+    gap:16px;                    /* space between cards */
+    max-width:1024px;
+    margin:24px auto;
+}
+
+/* card look */
+.card{
+    position:relative;           /* so we can place the Like button */
+    width:280px;                 /* consistent width like screenshot */
+    min-height:88px;
+    padding:16px 16px 18px;
+    background:#31363f;
+    border:1px solid #4b5362;
+    border-radius:12px;
+    color:#e6edf3;               /* readable text */
+}
+
+/* title style (big, bold) */
+.card h2{
+    margin:0;
+    font-size:28px;
+    font-weight:700;
+    padding-right:60px;          /* keep text away from Like button */
+}
+
+/* small Like in top-right */
+button{
+    position:absolute;
+    top:8px;
+    right:12px;
+    border:none;
+    background:transparent;
+    color:#cbd5e1;
+    font-size:14px;
+    cursor:pointer;
+}
+button:hover{ opacity:.9; }
+
+/*.card-container {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: center;*/
+
+/*    max-width: 1024px;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*.card {*/
+/*    border: 1px solid #4b5362;*/
+/*    padding: 20px;*/
+/*    margin: 10px;*/
+/*    background-color: #31363f;*/
+/*    border-radius: 10px;*/
+/*    min-height: 100px;*/
+/*}*/
+
+/*button {*/
+/*    border: none;*/
+/*    font-size: 30px;*/
+/*    background-color: transparent;*/
+/*    width: 100%;*/
+/*    text-align: right;*/
+/*    cursor: pointer;*/
+/*}*/
+
