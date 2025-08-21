@@ -1,3 +1,4 @@
+import Spinner from './components/Spinner.jsx';
 import { useEffect, useState} from 'react'
 import Search from './components/Search.jsx'
 
@@ -18,7 +19,7 @@ const App = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [movieList, setMovieList] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchMovies = async (searchTerm) => {
         setIsLoading(true);
@@ -46,7 +47,7 @@ const App = () => {
             console.log(`Error fetching movies: ${error}`);
             setErrorMessage('Error fetching movies. Please try again later.');
         } finally {
-            setIsLoading(true);
+            setIsLoading(false);
         }
     }
 
@@ -68,10 +69,10 @@ const App = () => {
                 {/*<h1 className="text-white">{searchTerm}</h1>*/}
 
                 <section className="all-movies">
-                    <h2>All Movies</h2>
+                    <h2 className="mt-[40px]">All Movies</h2>
 
                     {isLoading ? (
-                        <p className="text-white">Loading...</p>
+                        <Spinner />
                     ) : errorMessage ? (
                         <p className="text-red-500">{errorMessage}</p>
                     ) : (
