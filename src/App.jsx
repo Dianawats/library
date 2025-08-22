@@ -3,6 +3,7 @@ import { useDebounce } from 'react-use'
 import Spinner from './components/Spinner.jsx';
 import { useEffect, useState} from 'react'
 import Search from './components/Search.jsx'
+import {updateSearchCount} from "./appwrite.js";
 
 // API - Application Programming Interface -a set of rules that allows one software application to talk to another
 const API_BASE_URL = 'https://api.themoviedb.org/3';
@@ -51,6 +52,8 @@ const App = () => {
             }
 
             setMovieList(data.results || []);
+
+            updateSearchCount();
 
         } catch (error) {
             console.log(`Error fetching movies: ${error}`);
